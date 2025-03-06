@@ -1,0 +1,32 @@
+<h1>Lista de clientes</h1>
+
+<%= link_to 'Novo Cliente', new_client_path, class: 'btn btn-primary mb-3' %>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome:</th>
+            <th>E-mail:</th>
+            <th>Telefone:</th>
+            <th>Endereço:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @clients.each do |clients| %>
+            <tr>
+                <td><%=clients.name%></td>
+                <td><%=clients.email%></td>
+                <td><%=clients.phone%></td>
+                <td><%=clients.address%></td>
+                <td>
+                    <%= link_to 'Ver', cliente, class: 'btn btn-sm btn-info' %>
+                    <%= link_to 'Editar', edit_cliente_path(cliente), class: 'btn btn-sm btn-warning' %>
+                    <%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-sm btn-danger' %>
+                  </td>
+            </tr>
+
+        <%end%>
+    </tbody>
+
+</table>
