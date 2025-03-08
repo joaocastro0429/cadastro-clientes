@@ -1,0 +1,23 @@
+<h1>Visualização</h1>
+
+<p>
+    <strong>Nome:</strong>
+    <%= @client.name %>
+</p>
+<p>
+    <strong>E-mail:</strong>
+    <%= @client.email %>
+</p>
+<p>
+    <strong>Telefone</strong>
+    <%= @client.phone %>
+</p>
+
+<p>
+    <strong>Endereço</strong>
+    <%= @client.address %>
+</p>
+
+<%= link_to 'Editar', edit_client_path(@client) %> |
+<%= link_to 'Voltar', clients_path %>
+
