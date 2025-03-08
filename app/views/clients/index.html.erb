@@ -18,12 +18,10 @@
         <td><%= client.phone %></td>
         <td><%= client.address %></td>
         <td>
-          <%= link_to "View", client %>
+          <%= link_to "Back", client %>
           <%= link_to "Edit", edit_client_path(client) %>
-         <!-- Força fallback para método clássico -->
-<%= link_to "Delete", client, 
-method: :delete, 
-data: { confirm: "Tem certeza?" } %>
+          <%= button_to "Delete", @client, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+
         </td>
       </tr>
       
